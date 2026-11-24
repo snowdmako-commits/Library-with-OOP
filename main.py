@@ -32,4 +32,60 @@ while True:
 ====================================
 """)
 
-    choice = input("Enter your choice: ")
+    try:
+        choice = input("Enter your choice: ")
+
+        if choice == "1":
+
+            bookID = int(input("Enter book ID: "))
+            title = input("Enter book title: ")
+            author = input("Enter author: ")
+            pageCount = int(input("Enter page count: "))
+
+            book = Book(bookID, title, author, pageCount)
+            library.addBook(book)
+
+            print("\nBook added successfully.")
+
+        elif choice == "2":
+        
+            studentID = int(input("Enter student ID: "))
+            name = input("Enter student name: ")
+
+            student = Student(studentID, name)
+            library.addStudent(student)
+
+            print("\nStudent added successfully.")
+
+        elif choice == "3":
+            library.showBooks()
+
+        elif choice == "4":
+            library.showStudents()
+
+        elif choice == "5":
+
+            studentID = int(input("Enter student ID: "))
+            bookID = int(input("Enter book ID: "))
+
+            library.borrowBook(studentID, bookID)
+
+        elif choice == "6":
+
+            studentID = int(input("Enter student ID: "))
+            bookID = int(input("Enter book ID: "))
+
+            library.returnBook(studentID, bookID)
+
+        elif choice == "7":
+            print("\nExiting Library System...")
+            break
+
+        else:
+            print("\nInvalid choice. Try again.")
+
+    except ValueError:
+        print("Please enter a valid number!")
+
+    except Exception as e:
+        print("An error occurred:", e)
