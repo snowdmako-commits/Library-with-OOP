@@ -36,3 +36,19 @@ class Library:
         for student in self.students:
             student.showInfo()
             print("----------------------")
+
+
+    def searchBook(self, bookID):
+
+        for book in self.books:
+            if book.bookID == bookID:
+                return book
+        return None
+
+
+    def searchStudent(self, studentID):
+
+        for student in self.students:
+            if student.studentID == studentID:
+                return student
+        return None
