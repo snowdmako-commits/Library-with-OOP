@@ -14,3 +14,25 @@ class Library:
 
     def addStudent(self, student):
         self.students.append(student)
+
+
+    def showBooks(self):
+
+        if not self.books:
+            print("There are no books.")
+            return
+
+        for book in self.books:
+            book.showInfo()
+            print("----------------------")
+
+
+    def showStudents(self):
+
+        if not self.students:
+            print("There are no students.")
+            return
+
+        for student in self.students:
+            student.showInfo()
+            print("----------------------")
