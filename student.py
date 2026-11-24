@@ -15,3 +15,20 @@ class Student:
         Name: {self.name}
         Borrowed books: {len(self.borrowedBooks)}
         """)
+
+    def borrowBook(self, book):
+
+        if book.isAvailable:
+            book.borrow()
+            self.borrowedBooks.append(book)
+        else:
+            print("Book is not available...")
+
+
+    def returnBook(self, book):
+
+        if book in self.borrowedBooks:
+            book.returnBook()
+            self.borrowedBooks.remove(book)
+        else:
+            print("This student has not borrowed this book...")
