@@ -7,3 +7,10 @@ class Library:
         self.name = name
         self.books = []
         self.students = []
+
+    def addBook(self, book):
+        self.books.append(book)
+
+
+    def addStudent(self, student):
+        self.students.append(student)
